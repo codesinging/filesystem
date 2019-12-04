@@ -56,7 +56,7 @@ class Filesystem
      *
      * @return bool
      */
-    public static function isDirectory($directory)
+    public static function isDirectory(string $directory)
     {
         return is_dir($directory);
     }
@@ -68,7 +68,7 @@ class Filesystem
      *
      * @return bool
      */
-    public static function isReadable($path)
+    public static function isReadable(string $path)
     {
         return is_readable($path);
     }
@@ -80,7 +80,7 @@ class Filesystem
      *
      * @return bool
      */
-    public static function isWritable($path)
+    public static function isWritable(string $path)
     {
         return is_writable($path);
     }
@@ -124,7 +124,7 @@ class Filesystem
      *
      * @return mixed
      */
-    public static function chmod($path, $mode = null)
+    public static function chmod(string $path, int $mode = null)
     {
         if ($mode) {
             return chmod($path, $mode);
@@ -196,7 +196,7 @@ class Filesystem
      *
      * @return bool
      */
-    public static function move($path, $target)
+    public static function move(string $path, string $target)
     {
         return rename($path, $target);
     }
@@ -209,7 +209,7 @@ class Filesystem
      *
      * @return bool
      */
-    public static function copy($path, $target)
+    public static function copy(string $path, string $target)
     {
         return copy($path, $target);
     }
@@ -221,7 +221,7 @@ class Filesystem
      *
      * @return string
      */
-    public static function name($path)
+    public static function name(string $path)
     {
         return pathinfo($path, PATHINFO_FILENAME);
     }
@@ -233,7 +233,7 @@ class Filesystem
      *
      * @return string
      */
-    public static function basename($path)
+    public static function basename(string $path)
     {
         return pathinfo($path, PATHINFO_BASENAME);
     }
@@ -245,7 +245,7 @@ class Filesystem
      *
      * @return string
      */
-    public static function dirname($path)
+    public static function dirname(string $path)
     {
         return pathinfo($path, PATHINFO_DIRNAME);
     }
@@ -257,7 +257,7 @@ class Filesystem
      *
      * @return string
      */
-    public static function extension($path)
+    public static function extension(string $path)
     {
         return pathinfo($path, PATHINFO_EXTENSION);
     }
@@ -269,7 +269,7 @@ class Filesystem
      *
      * @return string
      */
-    public static function type($path)
+    public static function type(string $path)
     {
         return filetype($path);
     }
@@ -281,7 +281,7 @@ class Filesystem
      *
      * @return string|false
      */
-    public static function mimeType($path)
+    public static function mimeType(string $path)
     {
         return finfo_file(finfo_open(FILEINFO_MIME_TYPE), $path);
     }
@@ -293,7 +293,7 @@ class Filesystem
      *
      * @return int
      */
-    public static function size($path)
+    public static function size(string $path)
     {
         return filesize($path);
     }
@@ -305,7 +305,7 @@ class Filesystem
      *
      * @return int
      */
-    public static function lastModified($path)
+    public static function lastModified(string $path)
     {
         return filemtime($path);
     }
@@ -330,7 +330,7 @@ class Filesystem
      *
      * @return void
      */
-    public static function replace($path, $content)
+    public static function replace(string $path, string $content)
     {
         clearstatcache(true, $path);
 
@@ -350,7 +350,7 @@ class Filesystem
      *
      * @return array
      */
-    public static function glob($pattern, $flags = 0)
+    public static function glob(string $pattern, int $flags = 0)
     {
         return glob($pattern, $flags);
     }
@@ -373,6 +373,7 @@ class Filesystem
 
     /**
      * Get all of the files from the given directory (recursive).
+     *
      * @param string $directory
      * @param bool   $hidden
      *
