@@ -1,0 +1,17 @@
+{
+    "name": "codesinging/filesystem",
+    "description": "A filesystem package for PHP development",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "codesinging",
+            "email": "codesinging@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "CodeSinging\\Filesystem\\": "src"
+        }
+    }
+}
