@@ -1,6 +1,6 @@
-<h1 align="center"> filesystem </h1>
+<h1 align="center"> Filesystem </h1>
 
-<p align="center"> Filesystem package for PHP development.</p>
+<p align="center"> A filesystem package for PHP development.</p>
 
 
 ## Installing
@@ -11,7 +11,40 @@ $ composer require codesinging/filesystem -vvv
 
 ## Usage
 
-TODO
+### Filesystem
+- `exists(string $path)`
+- `missing(string $path)`
+- `isFile(string $path)`
+- `isDirectory(string $directory)`
+- `isReadable(string $path)`
+- `isWritable(string $path)`
+- `get(string $path)`
+- `put(string $path, string $contents, int $flags = 0)`
+- `chmod(string $path, int $mode = null)`
+- `prepend(string $path, string $content)`
+- `append(string $path, string $content)`
+- `delete($paths)`
+- `move(string $path, string $target)`
+- `copy(string $path, string $target)`
+- `name(string $path)`
+- `basename(string $path)`
+- `dirname(string $path)`
+- `extension(string $path)`
+- `type(string $path)`
+- `mimeType(string $path)`
+- `size(string $path)`
+- `lastModified(string $path)`
+- `hash(string $path)`
+- `replace(string $path, string $content)`
+- `glob(string $pattern, int $flags = 0)`
+- `files(string $directory, bool $recursive = false, bool $hidden = false)`
+- `allFiles(string $directory, bool $hidden = false)`
+- `directories(string $directory)`
+- `makeDirectory(string $path, int $mode = 0755, bool $recursive = false, bool $force = false)`
+- `moveDirectory($from, $to, $overwrite = false)`
+- `copyDirectory(string $directory, string $destination, int $options = null)`
+- `deleteDirectory(string $directory, bool $preserve = false)`
+- `cleanDirectory(string $directory)`
 
 ## Contributing
 
