@@ -10,11 +10,20 @@
     ],
     "require": {
         "php": ">=7.0",
-        "symfony/finder": "~3.3"
+        "symfony/finder": "~3.3",
+        "ext-fileinfo": "*"
     },
     "autoload": {
         "psr-4": {
             "CodeSinging\\Filesystem\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CodeSinging\\Filesystem\\Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6"
     }
 }
